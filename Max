@@ -1,0 +1,20 @@
+public class Max {
+  public static int sequence(int[] arr) {
+		int maximumSum = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+			int currentSum = 0;
+			currentSum += arr[i];
+			for (int j = i; j < arr.length; j++) {
+				if (j != arr.length - 1) {
+					currentSum += arr[j + 1];
+				}
+				if (currentSum > maximumSum) {
+					maximumSum = currentSum;
+				}
+			}
+		}
+
+		return maximumSum;
+    }
+}
